@@ -4,6 +4,8 @@ On each tick when the `Collect` system runs, any `Collectible` entities intersec
 
 A typical collector would be a player entity that picks up various items (loot, power-ups...) as it encounters them.
 
+![collector-example](https://raw.githubusercontent.com/ereborstudios/collector/master/demo.gif)
+
 ## Features
 
 ### Components
