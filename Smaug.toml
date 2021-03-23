@@ -1,0 +1,38 @@
+[package]
+name = "collector"
+authors = ["Logan Koester <logan@logankoester.com>"]
+version = "0.1.0"
+url = "https://smaug.dev/collector"
+keywords = []
+
+# Optional:
+# documentation = "https://example.com"
+# repository = "http://github.com/example/example"
+
+# Which files do you want to be automatically required from your package.
+# requires = ["lib/library.rb"]
+
+requires = [
+  "app/components/collector/index.rb",
+  "app/systems/collector/index.rb"
+]
+
+[package.installs]
+# Example
+#
+# <from> = <to>
+# "lib/library.rb" = "app/lib/library.rb"
+
+# Components
+"app/components/collected.rb"   = "app/components/collector/collected.rb"
+"app/components/collectible.rb" = "app/components/collector/collectible.rb"
+"app/components/collector.rb"   = "app/components/collector/collector.rb"
+"app/components/index.rb"       = "app/components/collector/index.rb"
+
+# Systems
+"app/systems/collect.rb"       = "app/systems/collector/collect.rb"
+"app/systems/index.rb"         = "app/systems/collector/index.rb"
+
+[dragonruby]
+version = "2"
+edition = "standard"
