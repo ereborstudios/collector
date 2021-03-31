@@ -1,5 +1,5 @@
 class Collect < Draco::System
-  filter Position, Size, Visible, Collectible
+  filter Position, Visible, Size, Collectible
 
   def tick(args)
     collectors = world.filter(Collector)
@@ -8,10 +8,7 @@ class Collect < Draco::System
       collector = collectors.find { |collector| collides?(entity, collector) }
 
       if collector
-        entity.components.delete(entity.components[:collectible])
-        entity.components.delete(entity.components[:visible])
-        entity.components.add Collected.new
-        $gtk.notify! "Collected #{world.filter(Collected).count} entities."
+        entity.components.add Collected.new({ collector_id: collector.id })
       end
     end
   end
